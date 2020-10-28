@@ -1,4 +1,4 @@
-# Personal Project Experet Creative Development
+# Personal Project Expert Creative Development
 
 ## Onderzoeksvraag
 
