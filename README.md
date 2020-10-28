@@ -18,6 +18,9 @@ Met verschillende factoren al gekend, zoals de technologie en zijn sterke punten
 
 Kunnen we met Unity een leuke, interactieve en cross-platform game maken die zich onderwerpt aan verschillende elementen van gameification omschreven in ons onderzoek.
 
+Als persoonlijke insteek in het project
+
+
 
 ### Deliverables
 opsomming van de deliverables
@@ -27,6 +30,14 @@ opsomming van de deliverables
 * De game spelen via je smartphone met aangepaste controls
 * De game spelen op een console met aangepaste controls
 * Implementatie van research
+
+### Planning
+* Week 1 - Research
+* Week 2 - Research en user testing
+* Week-1 - concept afstemmen op basis van research en user testing
+* Week-1 - Development
+* Week-1 - Development
+* Week-1 - Development
 
 
 ### Blog URL
