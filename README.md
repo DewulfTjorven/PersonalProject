@@ -20,7 +20,7 @@ Hoe kunnen we met Unity een leuke, interactieve en cross-platform game maken met
 
 ### Deliverables
 opsomming van de deliverables
-* Een werkende racegame met verschillende interactieve elementen
+* Een timed racegame waar de gebruiker een weg moet volgen en zo snel mogelijk naar de eindmeet moet geraken. De tijd tikt en als die op is dan is het game over. Wanneer de speler over een klokje rijdt dan krijgt hij ook meer tijd. Er zijn verschillende levels en de levels krijgen iedere keer een hogere moeilijkheidsgraad en een ruiger parkour.
 * het gebruik van je toetsen om de game te spelen
 * het gebruik van een fysieke instalatie (stuur en pedalen) om de game te spelen
 * De game spelen via je smartphone met aangepaste controls
@@ -28,12 +28,11 @@ opsomming van de deliverables
 * Implementatie van research
 
 ### Planning
-* Week 1 - Research en user testing van game
-* Week 2 - Research technologie
-* Week 3 - concept afstemmen op basis van research en user testing
+* Week 1 - Research en leren van Unity
+* Week 2 - Research en leren van Unity
+* Week 3 - Development
 * Week 4 - Development
 * Week 5 - Development
-* Week 6 - Development
 
 
 ### Blog URL
