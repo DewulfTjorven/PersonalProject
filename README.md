@@ -16,11 +16,7 @@ Unity is goed voor :
 
 Met verschillende factoren al gekend, zoals de technologie en zijn sterke punten, de klant en de opgave, kunnen we onze onderzoeksvraag opstellen.
 
-Kunnen we met Unity een leuke, interactieve en cross-platform game maken die zich onderwerpt aan verschillende elementen van gameification omschreven in ons onderzoek.
-
-Als persoonlijke insteek in het project
-
-
+Hoe kunnen we met Unity een leuke, interactieve en cross-platform game maken met verschillende mogelijkheden tot inputs, die zich onderwerpt aan verschillende elementen van gamification omschreven in ons onderzoek.
 
 ### Deliverables
 opsomming van de deliverables
@@ -32,12 +28,12 @@ opsomming van de deliverables
 * Implementatie van research
 
 ### Planning
-* Week 1 - Research
-* Week 2 - Research en user testing
-* Week-1 - concept afstemmen op basis van research en user testing
-* Week-1 - Development
-* Week-1 - Development
-* Week-1 - Development
+* Week 1 - Research en user testing van game
+* Week 2 - Research technologie
+* Week 3 - concept afstemmen op basis van research en user testing
+* Week 4 - Development
+* Week 5 - Development
+* Week 6 - Development
 
 
 ### Blog URL
