@@ -28,11 +28,11 @@ opsomming van de deliverables
 * Implementatie van research
 
 ### Planning
-* Week 1 - Research en leren van Unity
-* Week 2 - Research en leren van Unity
-* Week 3 - Development
-* Week 4 - Development
-* Week 5 - Development
+* Week 1 - Research Playstation , Google playstore SDK en setup van project
+* Week 2 - Maken van de Game zelf
+* Week 3 - Fysieke implementatie met Arduino
+* Week 4 - Controller + Smartphone controls
+* Week 5 - Afwerken + online plaatsen van project op Stores
 
 
 ### Blog URL
