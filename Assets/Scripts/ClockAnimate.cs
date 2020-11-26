@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectCollision : MonoBehaviour
+public class ClockAnimate : MonoBehaviour
 {
+
+    public float rotationsPerMinute  = 30.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +16,5 @@ public class DetectCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0f,6.0f*rotationsPerMinute*Time.deltaTime,0f);    }
     }
-
-    // private void OnTriggerEnter(Collider other){
-    //     Debug.Log("Points");
-    // }
-}
