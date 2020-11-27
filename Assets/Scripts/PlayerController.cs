@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public Vector2 movement;
 
+    private AudioSource playerAudio;
+    public AudioClip crashSound;
+
     // RaycastHit hit;
     // private float distance = 5.0f;
     // private Vector3 targetLocation;
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,6 +34,7 @@ public class PlayerController : MonoBehaviour
         forwardInput = Mathf.Lerp (forwardInput,Input.GetAxis("Vertical"),Time.deltaTime*0.3f);
         horizontalInput = Input.GetAxis("Horizontal");
 
+        
         // void OnTriggerEnter(Collider other){
         //     speed /= 8.0f;
         // }
@@ -45,8 +50,6 @@ public class PlayerController : MonoBehaviour
         if(isGrounded){
             moveCharacter(movement);
         }
-        // Auto vertragen achter collision, misschien nog proberen met extra tijd?
-        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -55,7 +58,6 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             Debug.Log(isGrounded);
         }
-
         else{
             isGrounded = false;
         }
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
     {    
         rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * forwardInput);
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+
     }
 }
 
