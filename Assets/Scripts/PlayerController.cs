@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 100.0f;
+    private float speed = 60.0f;
     private float turnSpeed = 55.0f;
     private float horizontalInput;
     private float forwardInput;
@@ -17,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource playerAudio;
     public AudioClip crashSound;
+
+    public TextMeshProUGUI speedText;
 
     // RaycastHit hit;
     // private float distance = 5.0f;
@@ -33,6 +37,9 @@ public class PlayerController : MonoBehaviour
         
         forwardInput = Mathf.Lerp (forwardInput,Input.GetAxis("Vertical"),Time.deltaTime*0.3f);
         horizontalInput = Input.GetAxis("Horizontal");
+
+        speedText.text = "speed " + speed.ToString();
+        
 
         
         // void OnTriggerEnter(Collider other){
@@ -56,18 +63,28 @@ public class PlayerController : MonoBehaviour
     {    
         rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * forwardInput);
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle"){
             isGrounded = true;
-            Debug.Log(isGrounded);
         }
         else{
             isGrounded = false;
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == ("Boost")){
+            speed += 10.0f;
+            Destroy(other.gameObject);
+        }
+    }
+
+
 }
 
 

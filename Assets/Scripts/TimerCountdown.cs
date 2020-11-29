@@ -7,7 +7,7 @@ using TMPro;
 public class TimerCountdown : MonoBehaviour
 {
     
-    private float timeRemaining = 100;
+    private float timeRemaining = 120;
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
 
