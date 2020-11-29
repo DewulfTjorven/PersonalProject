@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClockAnimate : MonoBehaviour
 {
 
-    public float rotationsPerMinute  = 30.0f;
+    public float rotationsPerMinute  = 15.0f;
 
     // Start is called before the first frame update
     void Start()

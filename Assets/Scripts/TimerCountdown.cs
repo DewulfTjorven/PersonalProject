@@ -7,7 +7,7 @@ using TMPro;
 public class TimerCountdown : MonoBehaviour
 {
     
-    private float timeRemaining = 65;
+    private float timeRemaining = 75;
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
 
@@ -52,5 +52,13 @@ public class TimerCountdown : MonoBehaviour
         float milliSeconds = (timeToDisplay % 1) * 1000;
 
         timeText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
+    }
+
+    // Voegt 5 seconden aan de timer toe wanneer de speler over een klokje gaat
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == ("Clock")){
+            timeRemaining += 5;
+        }
     }
 }

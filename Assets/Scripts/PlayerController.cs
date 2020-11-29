@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 movement;
 
     private AudioSource playerAudio;
+    public AudioClip crashSound;
 
     // RaycastHit hit;
     // private float distance = 5.0f;
