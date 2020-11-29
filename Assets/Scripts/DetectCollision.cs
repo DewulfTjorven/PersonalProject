@@ -22,7 +22,7 @@ public class DetectCollision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == ("Player")){
-            crashAudio.PlayOneShot(crashSound, 0.5f);
+            crashAudio.PlayOneShot(crashSound, 0.4f);
         }
     }
 }
