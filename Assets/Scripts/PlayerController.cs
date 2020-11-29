@@ -51,24 +51,22 @@ public class PlayerController : MonoBehaviour
             moveCharacter(movement);
         }
     }
+    
+    void moveCharacter(Vector2 direction)
+    {    
+        rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * forwardInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+    }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground"){
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle"){
             isGrounded = true;
             Debug.Log(isGrounded);
         }
         else{
             isGrounded = false;
         }
-    }
-
-    
-    void moveCharacter(Vector2 direction)
-    {    
-        rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * forwardInput);
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
-
     }
 }
 

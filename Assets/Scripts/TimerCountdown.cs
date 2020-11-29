@@ -7,7 +7,7 @@ using TMPro;
 public class TimerCountdown : MonoBehaviour
 {
     
-    private float timeRemaining = 75;
+    private float timeRemaining = 100;
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
 
@@ -15,21 +15,22 @@ public class TimerCountdown : MonoBehaviour
     void Start()
     {
         timerIsRunning = true;
+        Time.timeScale = 1.0f;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
             {
-                timeRemaining -= Time.deltaTime;
+                timeRemaining -= Time.fixedDeltaTime;
                 DisplayTime(timeRemaining);
 
                 if (timeRemaining > 0)
                 {
-                    timeRemaining -= Time.deltaTime;
+                    timeRemaining -= Time.fixedDeltaTime;
                     DisplayTime(timeRemaining);
                 }
             }
@@ -45,7 +46,7 @@ public class TimerCountdown : MonoBehaviour
 
     void DisplayTime(float timeToDisplay)
     {
-        //timeToDisplay += 1;
+        timeToDisplay += 1;
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);  
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
