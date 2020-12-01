@@ -17,7 +17,7 @@ public class ObstaclePoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pointText.text = "Your points " + points.ToString();
+        pointText.text = "Score " + points.ToString();
     }
 
     private void OnCollisionEnter(Collision collision)

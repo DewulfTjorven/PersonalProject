@@ -6,74 +6,51 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 60.0f;
+    private float speed = 90.0f;
     private float turnSpeed = 55.0f;
-    private float horizontalInput;
-    private float forwardInput;
+    private float vertical;
+    private float horizontal;
 
     public GameObject ground;
     private bool isGrounded;
+    private bool onLooping = false;
 
-    public Rigidbody rb;
-    public Vector2 movement;
+    private Rigidbody rb;
 
     private AudioSource playerAudio;
     public AudioClip crashSound;
 
     public TextMeshProUGUI speedText;
 
-    // RaycastHit hit;
-    // private float distance = 5.0f;
-    // private Vector3 targetLocation;
+    private float triggerrayDownLength = 0.5f;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         playerAudio = GetComponent<AudioSource>();
-    }
-
-    void Update()
-    {
-        
-        forwardInput = Mathf.Lerp (forwardInput,Input.GetAxis("Vertical"),Time.deltaTime*0.3f);
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        speedText.text = "speed " + speed.ToString();
-        
-
-        
-        // void OnTriggerEnter(Collider other){
-        //     speed /= 8.0f;
-        // }
-
-        // void OnTriggerExit(Collider other){
-        //     speed *= 8.0f;
-        // }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {   
-        if(isGrounded){
-            moveCharacter(movement);
-        }
-    }
-    
-    void moveCharacter(Vector2 direction)
-    {    
-        rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * forwardInput);
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
-    }
+        if(onLooping == false){
+            RayCastDown();
+        }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle"){
-            isGrounded = true;
+        vertical = Mathf.Lerp (vertical,Input.GetAxis("Vertical"),Time.deltaTime*0.3f);
+        horizontal = Input.GetAxis("Horizontal");
+
+        if(isGrounded == true){
+            rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * vertical);
+            transform.Rotate((transform.up * horizontal) * turnSpeed * Time.fixedDeltaTime);
         }
-        else{
-            isGrounded = false;
+
+        if(isGrounded == false){
+            // code here
         }
+
+        speedText.text = "speed " + speed.ToString();
     }
 
     void OnTriggerEnter(Collider other)
@@ -82,7 +59,51 @@ public class PlayerController : MonoBehaviour
             speed += 10.0f;
             Destroy(other.gameObject);
         }
+        if (other.gameObject.tag == "Loop"){
+                isGrounded = true;
+                onLooping = true;
+                Debug.Log("Looping!");
+        } 
+        else{
+            onLooping = false;
+        }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        onLooping = false;
+    }
+
+    void RayCastDown()
+     {
+         RaycastHit hit;  
+         Debug.DrawRay(transform.position, Vector3.down * triggerrayDownLength, Color.red, 2, true); //Makes the RayCast visible to make sure it's the right length.  
+         if (Physics.Raycast(transform.position, Vector3.down, out hit, triggerrayDownLength)) //Shoots out a RayCast, Length is set at "rayLength" Var, 
+             {
+                if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "Obstacle" || hit.collider.gameObject.tag == "Looping") 
+                {
+                    isGrounded = true;
+                    Debug.Log("Hit");
+                }
+                 
+                else    
+                {
+                    isGrounded = false;
+                    Debug.Log("Nothing Hit");
+                    // speed = 0;
+                    // turnSpeed = 0;
+                }
+             }
+     }
+
+         // void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle"){
+    //         isGrounded = true;
+    //         Debug.Log("Grounded!");
+    //     }
+    // }
+
 
 
 }

@@ -8,6 +8,8 @@ TagManager:
   - Clock
   - Obstacle
   - Boost
+  - Offroad
+  - Loop
   layers:
   - Default
   - TransparentFX
