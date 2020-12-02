@@ -20,7 +20,7 @@ Hoe kunnen we met Unity een leuke, interactieve en cross-platform game maken met
 
 ### Deliverables
 opsomming van de deliverables
-* Een timed racegame waar de gebruiker een weg moet volgen en zo snel mogelijk naar de eindmeet moet geraken. De tijd tikt en als die op is dan is het game over. Wanneer de speler over een klokje rijdt dan krijgt hij ook meer tijd. Er zijn verschillende levels en de levels krijgen iedere keer een hogere moeilijkheidsgraad en een ruiger parkour.
+* Een timed racegame waar de gebruiker een weg moet volgen en zo snel mogelijk naar de eindmeet moet geraken. De tijd tikt en als die op is dan is het game over. Wanneer de speler over een klokje rijdt dan krijgt hij ook meer tijd.
 * het gebruik van je toetsen om de game te spelen
 * het gebruik van een fysieke instalatie (stuur en pedalen) om de game te spelen
 * De game spelen via je smartphone met aangepaste controls
