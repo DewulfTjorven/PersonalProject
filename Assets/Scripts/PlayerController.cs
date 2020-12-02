@@ -6,13 +6,13 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 90.0f;
+    public float speed = 80.0f;
     private float turnSpeed = 55.0f;
     private float vertical;
     private float horizontal;
 
     public GameObject ground;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool onLooping = false;
 
     private Rigidbody rb;
@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
         }
 
         if(isGrounded == false){
-            // code here
         }
 
         speedText.text = "speed " + speed.ToString();
@@ -77,35 +76,34 @@ public class PlayerController : MonoBehaviour
     void RayCastDown()
      {
          RaycastHit hit;  
-         Debug.DrawRay(transform.position, Vector3.down * triggerrayDownLength, Color.red, 2, true); //Makes the RayCast visible to make sure it's the right length.  
-         if (Physics.Raycast(transform.position, Vector3.down, out hit, triggerrayDownLength)) //Shoots out a RayCast, Length is set at "rayLength" Var, 
+         //Debug.DrawRay(transform.position, Vector3.down * triggerrayDownLength, Color.red, 2, true);
+         if (Physics.Raycast(transform.position, Vector3.down, out hit, triggerrayDownLength))
              {
-                if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "Obstacle" || hit.collider.gameObject.tag == "Looping") 
+                if (hit.collider.gameObject.tag == "Ground" || hit.collider.gameObject.tag == "Obstacle" || hit.collider.gameObject.tag == "Looping" || hit.collider.gameObject.tag == "Finish") 
                 {
                     isGrounded = true;
-                    Debug.Log("Hit");
+                    //Debug.Log("Hit");
                 }
                  
                 else    
                 {
                     isGrounded = false;
-                    Debug.Log("Nothing Hit");
+                    //Debug.Log("Nothing Hit");
                     // speed = 0;
                     // turnSpeed = 0;
                 }
              }
      }
 
-         // void OnCollisionEnter(Collision collision)
-    // {
-    //     if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle"){
-    //         isGrounded = true;
-    //         Debug.Log("Grounded!");
-    //     }
-    // }
-
-
-
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Finish"){
+            Debug.Log("Finished!");
+            isGrounded = false;
+            speed = 0;
+            turnSpeed = 0;
+        }
+    }
 }
 
 

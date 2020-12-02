@@ -1,12 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-public class TimerCountdown : MonoBehaviour
+public class GameTimer : MonoBehaviour
 {
-    
     public GameObject player;
     private float timeRemaining = 10;//120//;
     public bool timerIsRunning = false;
@@ -39,11 +36,9 @@ public class TimerCountdown : MonoBehaviour
             else
             {
                 player.GetComponent<PlayerController>().isGrounded = false;
-                Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
                 timeText.text = "Time is up!";
-                FailedText.text = "Too slow!" + "Press R to try again!";
             }
         }
     }
@@ -57,13 +52,5 @@ public class TimerCountdown : MonoBehaviour
         float milliSeconds = (timeToDisplay % 1) * 1000;
 
         timeText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
-    }
-
-    // Voegt 5 seconden aan de timer toe wanneer de speler over een klokje gaat
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == ("Clock")){
-            timeRemaining += 10;
-        }
     }
 }
