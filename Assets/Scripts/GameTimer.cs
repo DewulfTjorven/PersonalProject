@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
     public GameObject player;
-    private float timeRemaining = 10;//120//;
+    private float timeRemaining = 5;//120//;
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
-    public TextMeshProUGUI FailedText;
 
     // Start is called before the first frame update
     void Start()

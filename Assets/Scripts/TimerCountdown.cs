@@ -8,7 +8,7 @@ public class TimerCountdown : MonoBehaviour
 {
     
     public GameObject player;
-    private float timeRemaining = 10;//120//;
+    private float timeRemaining = 120;//120//;
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI FailedText;
