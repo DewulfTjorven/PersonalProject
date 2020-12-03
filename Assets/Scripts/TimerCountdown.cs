@@ -29,12 +29,6 @@ public class TimerCountdown : MonoBehaviour
             {
                 timeRemaining -= Time.fixedDeltaTime;
                 DisplayTime(timeRemaining);
-
-                if (timeRemaining > 0)
-                {
-                    timeRemaining -= Time.fixedDeltaTime;
-                    DisplayTime(timeRemaining);
-                }
             }
             else
             {
@@ -50,7 +44,7 @@ public class TimerCountdown : MonoBehaviour
 
     void DisplayTime(float timeToDisplay)
     {
-        timeToDisplay += 1;
+        timeToDisplay += 0;
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);  
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);

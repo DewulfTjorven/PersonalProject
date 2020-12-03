@@ -7,9 +7,9 @@ using TMPro;
 public class GameTimer : MonoBehaviour
 {
     public GameObject player;
-    private float timeRemaining = 5;//120//;
+    private float timeRemaining = 3;//120//;
     public bool timerIsRunning = false;
-    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI countdownText;
 
     // Start is called before the first frame update
     void Start()
@@ -27,19 +27,18 @@ public class GameTimer : MonoBehaviour
             {
                 timeRemaining -= Time.fixedDeltaTime;
                 DisplayTime(timeRemaining);
+                player.GetComponent<PlayerController>().isGrounded = false;
+                player.GetComponent<TimerCountdown>().timerIsRunning = false;
 
-                if (timeRemaining > 0)
-                {
-                    timeRemaining -= Time.fixedDeltaTime;
-                    DisplayTime(timeRemaining);
-                }
             }
             else
             {
-                player.GetComponent<PlayerController>().isGrounded = false;
                 timeRemaining = 0;
                 timerIsRunning = false;
-                timeText.text = "Time is up!";
+                Destroy(countdownText);
+                player.GetComponent<PlayerController>().isGrounded = true;
+                player.GetComponent<TimerCountdown>().timerIsRunning = true;
+
             }
         }
     }
@@ -50,8 +49,7 @@ public class GameTimer : MonoBehaviour
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);  
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        float milliSeconds = (timeToDisplay % 1) * 1000;
 
-        timeText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
+        countdownText.text = string.Format("{1:00}", minutes, seconds);
     }
 }

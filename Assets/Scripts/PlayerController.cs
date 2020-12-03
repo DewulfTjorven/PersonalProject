@@ -6,11 +6,12 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 80.0f;
+    public float speed = 60.0f;
     private float turnSpeed = 55.0f;
     private float vertical;
     private float horizontal;
 
+    public GameObject player;
     public GameObject ground;
     public bool isGrounded;
     private bool onLooping = false;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip crashSound;
 
     public TextMeshProUGUI speedText;
+    public TextMeshProUGUI crashText;
 
     private float triggerrayDownLength = 0.5f;
 
@@ -46,8 +48,9 @@ public class PlayerController : MonoBehaviour
             transform.Rotate((transform.up * horizontal) * turnSpeed * Time.fixedDeltaTime);
         }
 
-        if(isGrounded == false){
-        }
+        // if(isGrounded == false){
+        //     Debug.Log("Crashed!");
+        // }
 
         speedText.text = "speed " + speed.ToString();
     }
@@ -88,6 +91,8 @@ public class PlayerController : MonoBehaviour
                 else    
                 {
                     isGrounded = false;
+                    crashText.text = "You crashed!" + "Press R to try again";
+                    player.GetComponent<TimerCountdown>().timerIsRunning = false;
                     //Debug.Log("Nothing Hit");
                     // speed = 0;
                     // turnSpeed = 0;
