@@ -7,7 +7,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 60.0f;
-    private float turnSpeed = 55.0f;
+    private float turnSpeed = 45.0f;
     private float vertical;
     private float horizontal;
 
@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {   
-
         if(onLooping == false){
             RayCastDown();
         }
@@ -45,13 +44,12 @@ public class PlayerController : MonoBehaviour
 
         if(isGrounded == true){
             rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * vertical);
-            transform.Rotate((transform.up * horizontal) * turnSpeed * Time.fixedDeltaTime);
+            transform.Rotate((transform.up * horizontal) * turnSpeed * Time.deltaTime);
         }
 
         // if(isGrounded == false){
         //     Debug.Log("Crashed!");
         // }
-
         speedText.text = "speed " + speed.ToString();
     }
 
@@ -104,15 +102,9 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Finish"){
             Debug.Log("Finished!");
-            isGrounded = false;
+            //isGrounded = false;
             speed = 0;
             turnSpeed = 0;
         }
     }
 }
-
-
-
-
-
-        
