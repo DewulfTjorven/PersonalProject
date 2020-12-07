@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
             RayCastDown();
         }
 
-        vertical = Mathf.Lerp (vertical,Input.GetAxis("Vertical"),Time.deltaTime*0.3f);
+        vertical = Mathf.Lerp (vertical,Input.GetAxis("Vertical"),Time.deltaTime*0.25f);
         horizontal = Input.GetAxis("Horizontal");
 
         if(isGrounded == true){
