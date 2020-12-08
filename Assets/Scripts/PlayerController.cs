@@ -7,7 +7,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 60.0f;
-    public float turnSpeed = 45.0f;
+    public float turnSpeed = 50.0f;
     public float vertical;
     public float horizontal;
 
