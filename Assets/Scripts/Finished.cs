@@ -28,7 +28,7 @@ public class Finished : MonoBehaviour
             player.GetComponent<PlayerController>().speed = 0;
             player.GetComponent<TimerCountdown>().timerIsRunning = false;
             Debug.Log("Finished!");
-            finishedText.text = "Finished!" + "Press R to restart!";
+            finishedText.text = "Finished!";
         }
     }
 

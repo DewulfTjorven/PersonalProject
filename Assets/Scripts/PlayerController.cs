@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
                 else    
                 {
                     isGrounded = false;
-                    crashText.text = "You crashed!" + "Press R to try again";
+                    crashText.text = "You crashed!";
                     player.GetComponent<TimerCountdown>().timerIsRunning = false;
                     //Debug.Log("Nothing Hit");
                     // speed = 0;
