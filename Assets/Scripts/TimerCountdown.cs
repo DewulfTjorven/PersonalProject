@@ -37,7 +37,7 @@ public class TimerCountdown : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 timeText.text = "Time is up!";
-                FailedText.text = "Too slow!" + "Press R to try again!";
+                FailedText.text = "Too slow!";
             }
         }
     }

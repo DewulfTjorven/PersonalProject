@@ -56,11 +56,11 @@ public class PlayerController : MonoBehaviour
         if(isGrounded == true){
             rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * vertical);
             // Mobile input needs new method to acces the joystick axis for acceleration
-            rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * mobileVertical);
+            //rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * mobileVertical);
             
             transform.Rotate((transform.up * horizontal) * turnSpeed * Time.deltaTime);
             // mobile roate to acces second joystick
-            transform.Rotate((transform.up * mobileHorizontal) * turnSpeed * Time.deltaTime);
+            transform.Rotate((transform.up * mobileHorizontal) * (turnSpeed * 1.05f) * Time.deltaTime);
         }
 
         // if(isGrounded == false){
