@@ -26,10 +26,18 @@ public class PlayerController : MonoBehaviour
 
     private float triggerrayDownLength = 0.5f;
 
+    public Joystick joystick;
+    public Joystick joystickRotate;
+
+    public float mobileVertical;
+    public float mobileHorizontal;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerAudio = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -42,9 +50,17 @@ public class PlayerController : MonoBehaviour
         vertical = Mathf.Lerp (vertical,Input.GetAxis("Vertical"),Time.deltaTime*0.25f);
         horizontal = Input.GetAxis("Horizontal");
 
+        mobileVertical = Mathf.Lerp (mobileVertical,joystick.Vertical,Time.deltaTime*0.25f);
+        mobileHorizontal = joystickRotate.Horizontal;
+
         if(isGrounded == true){
             rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * vertical);
+            // Mobile input needs new method to acces the joystick axis for acceleration
+            rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed * mobileVertical);
+            
             transform.Rotate((transform.up * horizontal) * turnSpeed * Time.deltaTime);
+            // mobile roate to acces second joystick
+            transform.Rotate((transform.up * mobileHorizontal) * turnSpeed * Time.deltaTime);
         }
 
         // if(isGrounded == false){
