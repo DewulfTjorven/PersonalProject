@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         // if(isGrounded == false){
         //     Debug.Log("Crashed!");
         // }
-        speedText.text = "speed " + speed.ToString();
+        speedText.text = "Max speed " + speed.ToString();
     }
 
     void OnTriggerEnter(Collider other)
