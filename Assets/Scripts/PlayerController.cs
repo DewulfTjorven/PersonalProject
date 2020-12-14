@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             
             transform.Rotate((transform.up * horizontal) * turnSpeed * Time.deltaTime);
             // mobile roate to acces second joystick
-            transform.Rotate((transform.up * mobileHorizontal) * (turnSpeed * 1.05f) * Time.deltaTime);
+            //transform.Rotate((transform.up * mobileHorizontal) * (turnSpeed * 1.05f) * Time.deltaTime);
         }
 
         // if(isGrounded == false){
