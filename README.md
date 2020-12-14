@@ -41,7 +41,7 @@ Unity is goed voor :
 
 Met verschillende factoren al gekend, zoals de technologie en zijn sterke punten, de klant en de opgave, kunnen we onze onderzoeksvraag opstellen.
 
-Hoe kunnen we met Unity een leuke, interactieve en cross-platform game maken met verschillende mogelijkheden tot inputs, die zich onderwerpt aan verschillende elementen van gamification omschreven in ons onderzoek.
+Hoe kunnen we met Unity een leuke, interactieve en cross-platform game maken met verschillende mogelijkheden tot inputs, die zich onderwerpt aan verschillende elementen van gamification.
 
 ### Deliverables
 opsomming van de deliverables
