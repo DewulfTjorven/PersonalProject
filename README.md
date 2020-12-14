@@ -1,5 +1,30 @@
 # Personal Project Expert Creative Development
 
+## Het Project openen
+### Via Unity Hub
+Voeg een nieuw project toe en gebruik het Unity mapje in de broncode. Je zult Unity openen en het project te zien krijgen.
+
+## Controls
+
+### Macbook
+- Pijltjestoetsen om de auto te verplaatsen
+- R toets om het spel te herstarten
+
+### Controller
+- Pijltjes boven en onder om gas te geven of te remmen
+- Rechter Joystick om te auto te draaien
+- Driehoekje om het spel te herstarten
+
+### Arduino
+- Pijltjestoetsen om vooruit of achteruit te gaan
+- Aan het stuurtje draaien om de auto te draaien
+- R toets om het spel te herstarten
+
+### Mobile
+- Linker Joystick om gas te geven of te remmen
+- Rechter Joystick om te draaien
+- Knopje in het midden om te herstarten
+
 ## Onderzoeksvraag
 
 ### De Klant
@@ -32,7 +57,7 @@ opsomming van de deliverables
 * Week 2 - Maken van de Game zelf
 * Week 3 - Fysieke implementatie met Arduino
 * Week 4 - Controller + Smartphone controls
-* Week 5 - Afwerken + online plaatsen van project op Stores
+* Week 5 - Afwerken + online plaatsen
 
 
 ### Blog URL
